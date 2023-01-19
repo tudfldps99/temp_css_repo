@@ -27,12 +27,28 @@
             justify-content: center;
             align-items: center;
         }
+        /* align-self       " 너 혼자만 "
+            - 교차 축(cross-axis)에서 개별 Item의 정렬 방법을 설정.
+            - align-items속성은 container내부의 모든 Item에 대해 정렬 방법을 설정하지만
+              이 속성은 일부 Item만 설정할 때 사용.
+            - align-items 속성보다 우선함.
+
+                auto : container의 align-items를 상속 (기본값)
+                stretch : container의 교차 축을 채우기 위해 Item을 늘림 (height를 auto로 변경 필요)
+                flex-start : Item을 시작점부터 정렬
+                flex-end : Item을 끝점부터 정렬
+                center : Item을 가운데 정렬
+                baseline : Item을 문자 기준선에 정렬
+        */
         .item:nth-child(2) {
             align-self: flex-start;
         }
         .item:nth-child(4) {
-            align-self: stretch;
+            align-self: stretch;        /* stretch로 할거면 height를 auto로 변경 필요 */
             height: auto;
+        }
+        .item:nth-child(5) {
+            align-self: flex-end;
         }
     </style>
 </head>
