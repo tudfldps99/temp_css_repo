@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            /* display: flex; */
+        }
+        .container {
+            width: fit-content;
+            border: 2px solid red;
+            padding: 20px;
+            
+            /* item에 수평배치 하려면? */
+            /* overflow: hidden; */  /* 3) float: left 시 overflow 속성  필요 */
+            display: flex;           /* 4) 부모에게 입력해주면 자식들이 수평배치 됨 */
+        }
+        .item {
+            width: 100px;
+            height: 100px;
+            border: 2px solid orange;
+            /* 수평배치 하려면? */
+            /* 1) display: inline; */               /* 수평 배치가 되지만, 가로&세로 크기 지정 안됨 */
+            /* 2) display: inline-block; */         /* 수평 배치와 가로&세로 크기 지정이 되지만, Tab 크기를 space로 인식해서 div들 사이에 공백 존재 */
+            /* 3) float: left; */                       /* 공백도 없고 수평배치도 잘 됐지만, 부모의 세로길이가 깨짐 -> 부모에 overflow: hidden 추가해야 함 */
+            /* 4) 부모에게 display: flex 입력하면 자식들이 수평배치 됨 */ 
+        }
+    </style>
+</head>
+<body>
+    <!-- a{메롱}*4 -->  <!-- inline (수평 배치) -->
+    <a href="">메롱</a>
+    <a href="">메롱</a>
+    <a href="">메롱</a>
+    <a href="">메롱</a>
+
+    <!-- block (수직 배치) -->
+    <h1>메롱</h1>
+    <h1>메롱</h1>
+    <h1>메롱</h1>
+    <h1>메롱</h1>
+
+    <section>
+        <div class="container">
+            <div class="item">123</div>
+            <div class="item">123</div>
+            <div class="item">123</div>
+        </div>
+        <!-- <div class="container">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+        <div class="container">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div> -->
+    </section>
+
+</body>
+</html>

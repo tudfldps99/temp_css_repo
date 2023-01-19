@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .root {
+            width: 600px;
+            height: 500px;
+            border: 4px dashed orange;
+            padding: 100px;
+            font-size: 30px;
+            position: relative;         /* 기준을 잡기 위해서 position속성 작성 (기본으로 쓸 때는 주로 relative) */
+        }
+        .parent {
+            width: 400px;
+            height: 300px;
+            border: 4px dashed blue;
+            padding: 50px;
+            position: relative;
+        }
+        .child {
+            width: 120px;
+            height: 80px;
+            border: 4px dashed red;
+            background: tomato;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 80px;
+        }
+        .abs {          
+            position: absolute;     /* 전체 브라우저 기준이 아닌, 주황색 상자(root) 기준으로 하고 싶다면? -> root에 position 속성 추가*/
+                                    /* 전체 브라우저 기준이 아닌, 파란색 상자(parent) 기준으로 하고 싶다면? -> parent에 position 속성 추가*/
+                                    /* 둘 다 있으면, 더 가까운 부모(parent) 기준으로 선택됨 */
+                                    /* ==> fixed : 무조건 브라우저 기준, 
+                                           absolute : 부모 중에 position 속성이 있다면 그 부모 기준이고, 부모 중에 position 속성이 없다면 전체 브라우저(body) 기준*/
+            top: 50px; 
+            right: 30px;
+        }
+        .center-box {
+            /* 박스 x, y축 중앙정렬 */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <!-- .root>.parent>.child{$}*3 -->
+    <div class="root center-box">
+        <div class="parent center-box">
+            <div class="child">1</div>
+            <div class="child abs">2</div>
+            <div class="child center-box">3</div>
+        </div>
+    </div>
+
+
+</body>
+</html>

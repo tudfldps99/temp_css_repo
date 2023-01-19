@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 70%;
+            border: 4px solid #000;
+            padding: 20px;
+            display: flex;      /* flex-direction: row 과 flex-wrap: nowrap 이 자동으로 숨어서 함께 존재 */
+            /*flex-direction: row;*/        /* flex-direction: row(기본) : 정렬 방향은 수평 */
+                                            /* flex-direction: row-reverse : 정렬 방향은 수평이지만, 오른쪽 기준 */
+                                            /* flex-direction: column : 다시 수직 배치로 돌아감*/
+            flex-wrap: wrap;            /* flex-wrap: nowrap(기본) : 브라우저 크기가 작아지면 item 크기도 같이 작아짐 */
+                                        /* flex-wrap: wrap : item 크기가 고정되면서 브라우저 크기가 작아지면 아래로 내려감 */
+
+            /* flex-flow: row wrap;  --- 위의 두개 속성을 한번에 작성 가능 */ 
+        }
+        .item {
+            width: 33.3%;       /* 한줄에 3개씩 */
+            height: 100px;
+            border: 4px dashed red;
+
+            /* border 나 padding 으로 인해서 가로&세로가 커지는 상황 방지 */
+            box-sizing: border-box;
+
+            border-radius: 10px;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+        <div class="item">G</div>
+        <div class="item">H</div>
+        <div class="item">I</div>
+        <div class="item">J</div>
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+        <div class="item">F</div>
+        <div class="item">G</div>
+        <div class="item">H</div>
+        <div class="item">I</div>
+        <div class="item">J</div>
+    </div>
+
+
+</body>
+</html>

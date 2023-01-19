@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .container {
+            width: 80%;
+            margin: 50px auto 0;
+        }
+        .box {      /* 5개 box 공통 디자인 */
+            width: 100px;
+            height: 100px;
+            background: tomato;
+            border: 4px dashed red;
+            border-radius: 15px;
+            font-size: 30px;
+            text-align: center;
+            line-height: 100px;
+            float: left;
+            box-shadow: 2px 2px 20px #222;
+            margin-right: -30px;
+            position: relative;     /* 5개 모두 동등하게 position 속성*/
+        }
+        .box:nth-child(even) {
+            margin-top: 30px;
+        }
+
+        .box1 {
+            z-index: 2;     /* z-index: 기본값 0*/
+        }
+        .box2 {
+           z-index: 1;          
+        }
+        /* 여기까지라면 우선순위 순서가 box1 > box2 > box5 > box4 > box3 */
+        .box5 {
+            z-index: -1;
+        } 
+        /* 여기까지라면 우선순위 순서가 box1 > box2 > box4 > box3 > box5 */
+
+        /* .box1 {
+            z-index: 100;
+        }
+        .box2 {
+            z-index: 1;
+        }
+        .box3 {
+            z-index: -1;
+        }
+        .box4 {
+            z-index: 0;
+        }
+        .box5 {
+            z-index: 0;
+        } */
+
+    </style>
+</head>
+<body>
+    <!--
+        * 요소 쌓임 순서(Stack order)
+            - 요소가 쌓여 있는 순서를 통해 어떤 요소가 더 위에 쌓이는지를 결정 (Z축)
+            1. static을 제외한 position속성의 값이 있을 경우 가장 위에 쌓임
+            2. position이 존재한다면 z-index속성의 숫자값이 높을 수록 위에 쌓임
+            3. position이 존재하고 z-index속성의 숫자값이 같다면 나중에 작성한 요소일수록 위에 쌓임
+    -->
+
+    <!-- .container>.box.box${$}*5 -->
+    <div class="container">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+    </div>
+
+</body>
+</html>

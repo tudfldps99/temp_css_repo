@@ -1,0 +1,60 @@
+<!-- 2023-01-19 -->
+<!-- HTML : 화면에 렌더링 하기 위한 구조 (스타일에 전혀 관여하지 않음, 구조적 의미에만 관여해야 함) -->
+<!doctype html>
+<html>
+   <head>
+      <title>html학습</title>
+      <meta charset="utf-8">
+
+      <!-- reset code (코드 작성 전 넣어주고 시작하기) -->
+      <!-- https://www.jsdelivr.com/package/npm/reset-css -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+      
+      <style>
+         /* reset code */
+         /* --> 위의 <link> 넣어주면 자동으로 reset 됨 */
+         /* h1,h2,h3,h4,h5,h6 {     
+            font-size: 1rem;
+            color: inherit;
+            margin: 0;
+            padding: 0;
+            font-weight: 400;
+         } */     
+
+         h2 {
+
+         }
+
+         div {
+            color: #00f;
+            text-decoration: underline;
+            cursor: pointer;
+         }
+      </style>
+   </head>
+  
+   <body>
+      <h1>안녕하세요</h1>     <!-- <h> 태그는 제목에만 붙여야 함 -->
+         <!-- <h1>이 없는데 <h2>가 있을 수 없음. 
+              단순 글씨 크기때문에 h1 대신 h2를 사용하는것이 아닌, css를 이용해서 글씨 크기를 조절-->
+
+      <!-- h${안녕하세요$}*6 -->
+      <h1>안녕하세요1</h1>
+      <h2>안녕하세요2</h2>
+      <h3>안녕하세요3</h3>
+      <h4>안녕하세요4</h4>
+      <h5>안녕하세요5</h5>
+      <h6>안녕하세요6</h6>
+
+      <a href="https:/www.naver.com">네이버 링크</a>
+
+      <div>구글 링크</div>
+      <script>
+         const $div = document.querySelector('div');
+         $div.onclick = e => {
+            window.location.href = 'https://www.google.com';
+         };
+      </script>
+   </body>
+</html>
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        div {
+            color: blue !important;     /* !important: 명시도 점수 무한대 */
+        }
+        #c-y {
+            color: yellow;
+        }
+        .c-g {
+            color: green;
+        }
+        body {
+            color: aqua;
+        }
+        div {
+            color: red;
+        }
+
+
+        /* 명시도 점수 */
+        h1 {
+            /* 1점 */
+            color: lightcoral;
+        }
+        .bbb h1 {
+            /* 10점 + 1점 : 11점 */
+            color: orangered;
+        }
+        #aaa h1 {
+            /* 100점 + 1점 : 101점 */
+            color: gray;
+        }
+        #aaa div.bbb h1 {
+            /* 100점 + 1점 + 10점 + 1점 : 111점 */
+            color: greenyellow;
+        }
+        #aaa .bbb h1 {
+            /* 100점 + 10점 + 1점 : 111점 */
+            color: tomato;
+        }
+
+        div.bbb > h1 {
+            /* 1 점 + 10점 + 1점 */
+            color: violet;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <!-- div : red, id : yellow, class : green, style : orange -->
+    <div id="c-y" class="c-g" style="color: orange;">안녕하세요1</div>  <!-- 결과 : orange -->
+
+    <!-- div : red, id : yellow, class : green -->
+    <div id="c-y" class="c-g">안녕하세요2</div>     <!-- 결과 : yellow -->
+
+    <!-- div : red, class : green -->
+    <div class="c-g">안녕하세요3</div>      <!-- 결과 : green -->
+
+    <!-- div : red -->
+    <div>안녕하세요4</div>    <!-- 결과 : red -->
+
+    <!-- 부모를 상속 => body : aqua -->
+    <section>안녕하세요5</section>
+
+    <hr>
+
+    <!-- #aaa>.bbb>h1{안녕하세요6} -->
+    <div id="aaa">
+        <div class="bbb">          
+            <h1>안녕하세요6</h1> 
+        </div>
+    </div>
+
+</body>
+</html>
+
+<!-- 
+    (우선순위 규칙 : 명시도 점수가 높은 선언이 우선)
+    # 명시도 점수 
+    1. !important: 무한대 점 
+    2. 인라인 스타일 (태그에 직접 작성): 1000점 
+    3. 아이디 선택자: 100점 
+    4. 클래스 선택자: 10점 
+    5. 태그 선택자: 1점 
+    6. 전체 선택자: 0점 
+
+    id > class
+-->

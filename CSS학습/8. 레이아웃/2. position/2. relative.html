@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            margin: 100px;
+            border: 4px solid gray;     /* solid : 실선 */
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background: orange;
+            border: 4px dashed red;
+            font-size: 30px;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .box:nth-child(2) {         /* 2번째 box */
+            position: relative;     /* absolute : 절대적으로(브라우저 전체 기준), relative : 상대적으로 (container 기준 (원래 자기 자리 기준))  */
+                                    /* absolute 으로 하면 주변 box 들에 영향O. z축으로 올라옴, relative 으로 하면 주변 box 들에 영향X*/
+            left: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- .container>.box{$}*3 -->
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+
+</body>
+</html>

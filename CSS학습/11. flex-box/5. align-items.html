@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            border: 4px solid #000;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            height: 400px;
+
+            /*align-items : 교차 축(cross-axis)의 정렬 방법을 설정. 
+                            Items가 한 줄일 경우 많이 사용하며, 
+                            container에 align-content속성이 없거나 기본값(stretch)이어야 함*/
+            align-items: flex-start;
+            /*
+                stretch : container의 교차 축을 채우기 위해 Items를 늘림 (기본값)
+                flex-start : Items를 시작점부터 정렬 (두줄이라면 가상의 중앙선을 그어서 두번째 줄을 중앙선 아래로 정렬)
+                flex-end : Items를 끝점부터 정렬    (두줄이라면 가상의 중앙선을 그어서 첫번째 줄을 중앙선 위로 정렬)
+                center : Items를 가운데 정렬    (두줄이라면 가상의 중앙선을 그어서 두 줄을 중앙선 기준으로 정렬)
+                baseline : Items를 문자 기준선에 정렬
+            */
+            /* align-contents 는 중앙선을 만들지 않음 */
+        }
+        .item {
+            width: 150px;
+            /* height: auto; */
+            height: 100px;
+            border: 4px dashed red;
+            border-radius: 10px;
+            font-size: 40px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .item:nth-child(even) {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="item">A</div>
+        <div class="item">B</div>
+        <div class="item">C</div>
+        <div class="item">D</div>
+        <div class="item">E</div>
+    </div>
+
+
+</body>
+</html>
